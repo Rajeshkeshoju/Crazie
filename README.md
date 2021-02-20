@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/Rajeshkeshoju/Crazie/blob/main/app/src/main/ic_launcher-playstore.png" width="70" height="70"/>
   
-# Crazie - Social media app  
+<h1 align="center">Crazie - Social media app</h1>  
 </p>
 
 
