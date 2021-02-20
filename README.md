@@ -1,4 +1,6 @@
-![alt text](https://github.com/Rajeshkeshoju/Crazie/blob/main/app/src/main/ic_launcher-playstore.png)
+<p align="center">
+<img src="https://github.com/Rajeshkeshoju/Crazie/blob/main/app/src/main/ic_launcher-playstore.png" width="70" height="70"/>
+</p>
 
 Crazie - Social media app
 
