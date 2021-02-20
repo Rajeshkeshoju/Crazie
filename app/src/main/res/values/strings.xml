@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Crazie</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="activity">Activity</string>
+    <string name="account">Account</string>
+    <string name="post">Post</string>
+    <string name="username">Username</string>
+    <string name="story">Story</string>
+    <string name="add_post_to_your_story">Add post to your story</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="create_account">Create account</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="logout">Logout</string>
+    <string name="share_app">Share app</string>
+    <string name="welcome">Welcome</string>
+    <string name="like">Like</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="close">Close</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="okay">Okay</string>
+    <string name="search">Search</string>
+    <string name="follow">Follow</string>
+    <string name="caption">Caption</string>
+    <string name="bio">Bio</string>
+    <string name="no_internet">No internet</string>
+    <string name="try_again">Try Again</string>
+    <string name="back">Back</string>
+    <string name="share">Share</string>
+
+    <string name="user_activity_text">You liked <b>%s</b>\'s post</string>
+</resources>

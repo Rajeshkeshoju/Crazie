@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1013255043250",
+    "project_id": "crazie-e82a2",
+    "storage_bucket": "crazie-e82a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013255043250:android:ed344a4dc650b2ad6db1ab",
+        "android_client_info": {
+          "package_name": "com.crazie.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013255043250-hp8sj5e247fi3905ecugab8u20i4nti0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR0gcDYuLwdLb9LdvlPrZ776mivQaJrTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013255043250-hp8sj5e247fi3905ecugab8u20i4nti0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

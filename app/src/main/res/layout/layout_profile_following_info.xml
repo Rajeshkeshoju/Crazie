@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/profile_posts_count"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_large"
+                android:fontFamily="@font/inter_bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:id="@+id/profile_followers_count"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_large"
+                android:fontFamily="@font/inter_bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:id="@+id/profile_following_count"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_large"
+                android:fontFamily="@font/inter_bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/post"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/followers"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/following"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_small"/>
+        </LinearLayout>
+
+    </LinearLayout>

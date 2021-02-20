@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:background="?attr/colorPrimary">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabAlignmentMode="center"
+        android:clickable="false"
+        app:layout_anchorGravity="start"
+        app:fabAnimationMode="scale"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:backgroundTint="?attr/colorPrimary">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:menu="@menu/menu_home"
+                android:background="@drawable/bg_transparent"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="0dp"
+                android:padding="0dp"
+                android:elevation="10dp"
+                app:itemIconTint="@color/bottom_navigation_icon_text_tint"
+                app:itemTextColor="@color/bottom_navigation_icon_text_tint"/>
+        </FrameLayout>
+
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottomAppBar"
+        app:srcCompat="@drawable/ic_add"
+        app:elevation="10dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        android:contentDescription="@string/app_name"
+        android:backgroundTint="@color/colorAccent"
+        app:tint="@color/white"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

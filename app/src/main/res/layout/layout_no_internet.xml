@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".NoInternetActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_internet"
+        android:padding="50dp"
+        android:contentDescription="@string/no_internet" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_large"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_try_again_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/try_again"
+            android:textColor="@android:color/black"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:backgroundTint="?attr/colorSecondary"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

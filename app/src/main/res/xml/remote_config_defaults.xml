@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <entry>
+        <key>splash_enabled</key>
+        <value>false</value>
+    </entry>
+
+</defaultsMap>

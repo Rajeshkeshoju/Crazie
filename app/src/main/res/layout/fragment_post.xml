@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.PostFragment"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_area_height"
+            app:contentInsetStart="0dp"
+            android:elevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/close_post_fragment"
+                    android:layout_width="@dimen/touch_area_width"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_close"
+                    android:padding="12dp"
+                    android:contentDescription="@string/close" />
+
+                <TextView
+                    android:id="@+id/do_post"
+                    android:layout_width="@dimen/touch_area_width"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/post"
+                    android:gravity="center"
+                    android:textColor="?attr/colorSecondary"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="@dimen/text_large"/>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image_added"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_post_default"
+            android:contentDescription="@string/post" />
+
+        <EditText
+            android:layout_marginTop="8dp"
+            android:id="@+id/et_post_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/caption"
+            android:textSize="@dimen/text_small"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:inputType="textCapSentences"
+            android:autofillHints="@string/caption" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.AccountFragment"
+    android:background="?attr/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_account"
+            layout="@layout/toolbar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_user_dp"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/ic_account"
+                    android:layout_gravity="center" />
+
+                <include layout="@layout/layout_profile_following_info"  />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_user_full_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/full_name"
+                android:textSize="@dimen/text_large"
+                android:fontFamily="@font/inter_bold"
+                android:textColor="@android:color/white"
+                android:textAlignment="textStart"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_user_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bio"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_small"
+                android:padding="2dp"
+                android:maxLines="3"
+                android:ellipsize="end" />
+
+            <Button
+                android:id="@+id/button_fragment_account_follow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorSecondary"
+                android:text="@string/follow"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:padding="8dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Posts"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_small"
+            android:padding="10dp"
+            android:fontFamily="@font/inter_bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_account_posts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

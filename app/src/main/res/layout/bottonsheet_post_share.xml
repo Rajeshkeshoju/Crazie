@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="30dp"
+        android:layout_height="4dp"
+        android:background="@drawable/background_line"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:id="@+id/add_post_to_story"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/add_post_to_your_story"
+        android:textSize="@dimen/text_small"
+        android:drawablePadding="10dp"
+        android:textColor="?attr/colorSecondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        app:drawableStartCompat="@drawable/ic_story"
+        app:drawableTint="@color/white" />
+
+</LinearLayout>

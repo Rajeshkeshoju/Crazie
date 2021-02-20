@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfileActivity"
+    android:background="?attr/colorPrimaryVariant">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/touch_area_height"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/edit_profile"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_large"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter_bold"
+                android:layout_alignParentStart="true"/>
+
+            <ImageView
+                android:id="@+id/edit_profile_close"
+                android:layout_width="@dimen/touch_area_width"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_close"
+                android:padding="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/close"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/edit_profile_save"
+                android:layout_width="@dimen/touch_area_width"
+                android:layout_height="@dimen/touch_area_height"
+                android:src="@drawable/ic_check_okay"
+                android:padding="12dp"
+                android:layout_alignParentEnd="true"
+                app:tint="?attr/colorSecondary"
+                android:contentDescription="@string/okay"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"/>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/background_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <FrameLayout
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/edit_profile_user_image"
+                    android:layout_width="@dimen/image_width"
+                    android:layout_height="@dimen/image_height"
+                    android:src="@drawable/ic_account" />
+
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_profile_new_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="?attr/colorSecondary"
+                android:layout_margin="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_edittext"
+                    android:hint="Name"
+                    android:textSize="@dimen/text_small"
+                    android:textColor="@color/white"
+                    android:maxLines="1"
+                    android:inputType="textCapWords"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_profile_new_bio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="?attr/colorSecondary"
+                android:layout_margin="5dp"
+                app:counterEnabled="true"
+                app:counterTextColor="@color/white"
+                app:counterMaxLength="150"
+                app:counterOverflowTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_edittext"
+                    android:hint="Bio"
+                    android:textSize="@dimen/text_small"
+                    android:maxLength="150"
+                    android:textColor="@color/white"
+                    android:inputType="textMultiLine"
+                    android:gravity="top|left"
+                    android:lines="5"
+                    android:minLines="1"
+                    android:maxLines="5" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

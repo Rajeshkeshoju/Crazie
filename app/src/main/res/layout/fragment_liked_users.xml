@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.LikedUsersFragment"
+    android:background="?attr/colorPrimary">
+
+    <include
+        android:id="@+id/toolbar_post_liked_users"
+        layout="@layout/toolbar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_liked_users"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"/>
+
+</LinearLayout>
