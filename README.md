@@ -6,7 +6,7 @@
 
 
 
-Crazie is inspired from famous social media app  <b><a href="instagram.com">@instagram</a></b>
+Crazie is inspired from famous social media app  <b><a href="http://instagram.com">@instagram</a></b>
 
 
 <!--
