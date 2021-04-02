@@ -13,9 +13,10 @@ import com.crazie.android.model.User
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
 
 class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
-    private lateinit var imageUri: Uri
+    private  lateinit var imageUri: Uri
 
     private lateinit var newName : TextInputLayout
     private lateinit var newBio : TextInputLayout
@@ -94,9 +95,6 @@ class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
                     newName.editText?.error = "Enter Name"
                     newBio.editText?.error = "Enter Bio"
                 }
-                /*if (imageUri != null){
-                    uploadNewImage()
-                }*/
 
             }
 
@@ -107,29 +105,23 @@ class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
         }
     }
 
-    /*private fun uploadNewImage() {
-        val storageRef = FirebaseStorage.getInstance().getReference("userProfilePictures")
-        val fileRef = storageRef.child(System.currentTimeMillis().toString()+"."+"jpg")
+    private fun updateProfilePicture(){
+        val storageRef = FirebaseStorage.getInstance().getReference("userProfilePictures/")
+        val fileRef = storageRef.child(user.userName +"."+"jpg")
 
-        val uploadTask = fileRef.putFile(imageUri)
-        uploadTask.continueWithTask {
-            if (!it.isSuccessful){
-                throw it.exception!!
-            }
+        fileRef.putFile(imageUri)
+                .addOnSuccessListener {
+                    fileRef.downloadUrl.addOnSuccessListener {
+                        dataBase.child("photoUrl").setValue(it.toString())
+                    }
+                }
+                .addOnFailureListener{
+                    Toast.makeText(this,"Something Went Wrong",Toast.LENGTH_SHORT).show()
+                }
 
-            return@continueWithTask fileRef.downloadUrl
-        }.addOnCompleteListener {
-            if (it.isSuccessful) {
-                val downloadUrl = it.result.toString()
 
-                FirebaseDatabase.getInstance().getReference("users")
-                        .child(FirebaseAuth.getInstance().currentUser!!.uid)
-                        .child("photoUrl")
-                        .setValue(downloadUrl)
-            }
-        }
+    }
 
-    }*/
 
     private fun changeUserImage() {
         val imagePick = Intent(Intent.ACTION_GET_CONTENT)
@@ -143,6 +135,7 @@ class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
 
         imageUri = data?.data!!
         userImage.setImageURI(imageUri)
+        updateProfilePicture()
     }
 
     companion object {

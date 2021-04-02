@@ -222,7 +222,11 @@ class AccountFragment(private val uId: String) : Fragment() {
         var moreEnable = true
 
         arrowBack.setOnClickListener{
-            activity?.onBackPressed()
+            activity!!.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container,HomeFragment())
+                    .addToBackStack(null)
+                    .commit()
         }
 
         userBio.setOnClickListener {

@@ -1,5 +1,10 @@
 package com.crazie.android.model
 
+import androidx.annotation.Keep
+import com.google.firebase.database.IgnoreExtraProperties
+
+@Keep
+@IgnoreExtraProperties
 data class SearchUser(
         var uId:String? = "",
         var fullName:String? = "" ,
