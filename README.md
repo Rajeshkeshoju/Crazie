@@ -26,9 +26,9 @@ Crazie is inspired from famous social media app  <b><a href="http://instagram.co
 
 <p><h3>Transition button</h3> <a href="https://github.com/roynx98/transition-button-android">roynx98/transition-button<a></p>
   
-<p><h3>Circular ImageView</h3><a href="https://github.com/hdodenhof/CircleImageView">Firebase Sever</a></p>
+<p><h3>Circular ImageView</h3><a href="https://github.com/hdodenhof/CircleImageView">Circular ImageView</a></p>
 
-<p><h3>Glide</h3><a href="https://github.com/bumptech/glide">Firebase Sever</a></p>
+<p><h3>Glide</h3><a href="https://github.com/bumptech/glide">Glide image fetcher</a></p>
 
-<p><h3>Image Cropper</h3><a href="https://github.com/ArthurHub/Android-Image-Cropper">Firebase Sever</a></p>
+<p><h3>Image Cropper</h3><a href="https://github.com/ArthurHub/Android-Image-Cropper">Image cropper</a></p>
 
