@@ -10,10 +10,10 @@ Crazie is inspired from famous social media app  <b><a href="http://instagram.co
 
 
 # Screenshots
-
-![Screenshot](Screenshots/1.jpg) | ![Screenshot](Screenshots/2.jpg) | ![Screenshot](Screenshots/3.jpg)
---- | --- | ---
-![Screenshot](Screenshots/4.jpg) | ![Screenshot](Screenshots/5.jpg)
+![Screenshot](Screenshots/1.jpg) | ![Screenshot](Screenshots/2.jpg)
+--- | ---
+![Screenshot](Screenshots/3.jpg) | ![Screenshot](Screenshots/4.jpg)
+![Screenshot](Screenshots/5.jpg)
 
 <!--
 # Screenshots
