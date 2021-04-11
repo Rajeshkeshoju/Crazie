@@ -1,7 +1,6 @@
 package com.crazie.android.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,7 +52,9 @@ class SearchUserAdapter(context: Context?, users: ArrayList<SearchUser>)
                         0,0,R.drawable.ic_verified,0)
             }
 
-            Glide.with(itemView).load(searchUser.photoUrl).into(userImageView)
+            if(searchUser.photoUrl != "null"){
+                Glide.with(itemView).load(searchUser.photoUrl).into(userImageView)
+            }
 
             if (searchUser.uId.equals(firebaseUser.uid)){
                 userFollowUnFollow.visibility  = View.GONE

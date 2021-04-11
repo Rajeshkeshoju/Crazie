@@ -70,12 +70,6 @@ class PostFragment : Fragment() {
 
     }
 
-    /*private fun getFileExtension(uri: Uri): String? {
-        val contentResolver = activity?.contentResolver
-        val mime = MimeTypeMap.getSingleton()
-        return mime.getExtensionFromMimeType(contentResolver?.getType(uri))
-}*/
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
@@ -99,40 +93,44 @@ class PostFragment : Fragment() {
     }
 
     private fun uploadPost() {
+//        val dialog = ProgressDialog.progressDialog(this.context!! , activity!!)
+//        dialog.setTitle("Uploading")
+
         val fileRef = storageRef.child(System.currentTimeMillis().toString()+"."+"jpg")
-        val uploadTask = fileRef.putFile(imageUri)
-        uploadTask.continueWithTask {
-            if (!it.isSuccessful){
-                throw it.exception!!
-            }
-
-            return@continueWithTask fileRef.downloadUrl
-        }.addOnCompleteListener {
-            if (it.isSuccessful) {
-                val downloadUrl = it.result.toString()
-
-                val dbRef = FirebaseDatabase.getInstance().getReference("posts")
-                val postId = dbRef.push().key
-                val hashMap = HashMap<String, Any>()
-                if (postId != null) {
-                    hashMap["postId"] = postId
+        fileRef.putFile(imageUri)
+                .addOnProgressListener {
+//                    dialog.show()
+//                    var progress = (100.0 * it.bytesTransferred) / it.totalByteCount
+//                    dialog.setProgress(progress)
                 }
-                hashMap["postImage"] = downloadUrl
-                hashMap["postCaption"] = postCaption.text.toString()
-                FirebaseAuth.getInstance().currentUser?.let { it1 ->
-                    hashMap.put("publisher",
-                            it1.uid)
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        val downloadUrl = it.result.toString()
+
+                        val dbRef = FirebaseDatabase.getInstance().getReference("posts")
+                        val postId = dbRef.push().key
+                        val hashMap = HashMap<String, Any>()
+                        if (postId != null) {
+                            hashMap["postId"] = postId
+                        }
+                        hashMap["postImage"] = downloadUrl
+                        hashMap["postCaption"] = postCaption.text.toString()
+                        FirebaseAuth.getInstance().currentUser?.let { it1 ->
+                            hashMap.put("publisher",
+                                    it1.uid)
+                        }
+
+                        if (postId != null) {
+                            dbRef.child(postId).setValue(hashMap)
+                        }
+
+                    } else {
+                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
+                    }
+                    //dialog.dismiss()
+                    loadHome()
                 }
 
-                if (postId != null) {
-                    dbRef.child(postId).setValue(hashMap)
-                }
-
-            } else {
-                Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
-            }
-            loadHome()
-        }
 
 
     }

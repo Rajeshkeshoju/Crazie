@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         val v = LayoutInflater.from(context).inflate(R.layout.fragment_home, container, false)
 
 
@@ -51,7 +50,7 @@ class HomeFragment : Fragment() {
 
         refreshFeed.setOnRefreshListener {
             fetchPosts()
-            Handler(Looper.myLooper()!!).postDelayed(Runnable {
+            Handler(Looper.myLooper()!!).postDelayed({
                 refreshFeed.isRefreshing = false
             },1000)
         }

@@ -28,8 +28,13 @@ class UserActivityAdapter(private val context: Context,
             FirebaseDatabase.getInstance().getReference("users").child(userActivity.publisher)
                     .addValueEventListener(object : ValueEventListener{
                         override fun onDataChange(snapshot: DataSnapshot) {
-                            Glide.with(itemView).load(snapshot.child("photoUrl").value).into(otherUserImage)
-                            Glide.with(itemView).load(userActivity.postImage).into(otherUserPost)
+
+                            if(snapshot.child("photoUrl").value != "null"){
+                                Glide.with(itemView).load(snapshot.child("photoUrl").value).into(otherUserImage)
+                            }
+                            if(userActivity.postImage != "null"){
+                                Glide.with(itemView).load(userActivity.postImage).into(otherUserPost)
+                            }
                             userActivityTextView.text = itemView.context.getString(R.string.user_activity_text,snapshot.child("userName").value)
                         }
 

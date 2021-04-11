@@ -54,6 +54,10 @@ class ActivityFragment : Fragment() {
     }
 
     private fun fetchActivity() {
+//        val dialog = ProgressDialog.progressDialog(this.context!!,activity!!)
+//        dialog.setTitle("Loading...")
+//        dialog.show()
+
         FirebaseDatabase.getInstance().getReference("likes")
                 .addValueEventListener(object : ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
@@ -69,6 +73,7 @@ class ActivityFragment : Fragment() {
                                                     userActivityList.add(activityInfo)
                                                 }
 
+                                                //dialog.dismiss()
                                                 userActivityAdapter.notifyDataSetChanged()
                                             }
 

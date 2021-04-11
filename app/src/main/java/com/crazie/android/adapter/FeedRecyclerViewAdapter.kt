@@ -1,7 +1,6 @@
 package com.crazie.android.adapter
 
-import android.content.Intent
-import android.net.Uri
+import android.annotation.SuppressLint
 import android.os.Handler
 import android.os.Looper
 import android.text.TextUtils
@@ -11,7 +10,6 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
@@ -24,7 +22,10 @@ import com.crazie.android.fragment.LikedUsersFragment
 import com.crazie.android.model.Post
 import com.crazie.android.model.User
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class FeedRecyclerViewAdapter(private val postList: ArrayList<Post>)
     : RecyclerView.Adapter<FeedRecyclerViewAdapter.ViewHolder>() {
@@ -113,42 +114,8 @@ class FeedRecyclerViewAdapter(private val postList: ArrayList<Post>)
                 }
             }
 
-            /*menuPost.setOnClickListener {
-                val popupMenu = PopupMenu(itemView.context,menuPost)
-                popupMenu.inflate(R.menu.menu_feed_post)
-                popupMenu.setOnMenuItemClickListener {
-                    when(it.itemId) {
-                        R.id.menu_share_to_instagram_story -> {
-                            sharePostToInstagramStory(Uri.parse("android.resource://"
-                                    + itemView.context.packageName
-                                    + "/drawable/welcome"))
-                        }
-                        else -> false
-                    }
-                }
 
-                popupMenu.show()
-            }*/
         }
-
-        /*private fun sharePostToInstagramStory(uri: Uri): Boolean {
-            val feedIntent = Intent(Intent.ACTION_SEND)
-            feedIntent.type = "image/*"
-            feedIntent.putExtra(Intent.EXTRA_STREAM,uri)
-            feedIntent.setPackage("com.instagram.android")
-
-            val intent = Intent("com.instagram.share.ADD_TO_STORY")
-            intent.setDataAndType(uri,"jpg")
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            intent.setPackage("com.instagram.android")
-
-            itemView.context.grantUriPermission("com.instagram.android",uri,Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            val chooserIntent = Intent.createChooser(feedIntent,"Share to Instagram story")
-            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intent)
-            itemView.context.startActivity(chooserIntent)
-
-            return true
-        }*/ */
 
         private fun giveLike(postId: String,isLiked:Boolean){
             if (isLiked){
@@ -186,6 +153,7 @@ class FeedRecyclerViewAdapter(private val postList: ArrayList<Post>)
         private fun mLikes(likes:TextView, postId: String){
             val ref = FirebaseDatabase.getInstance().getReference("likes").child(postId)
             ref.addValueEventListener(object : ValueEventListener{
+                @SuppressLint("SetTextI18n")
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.childrenCount > 0){
                         likes.text = snapshot.childrenCount.toString() + " Likes"

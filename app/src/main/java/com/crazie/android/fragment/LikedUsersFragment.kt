@@ -1,5 +1,6 @@
 package com.crazie.android.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,6 +27,7 @@ class LikedUsersFragment(private val postId:String) : Fragment() {
 
     private lateinit var toolbar: Toolbar
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v =  inflater.inflate(R.layout.fragment_liked_users, container, false)

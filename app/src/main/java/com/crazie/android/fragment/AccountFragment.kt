@@ -1,5 +1,6 @@
 package com.crazie.android.fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -117,7 +118,10 @@ class AccountFragment(private val uId: String) : Fragment() {
 
         userFullName.text = user.fullName
         userBio.text = user.bio
-        Glide.with(this@AccountFragment).load(user.photoUrl).into(userDP)
+
+        if(user.photoUrl != "null"){
+            Glide.with(this@AccountFragment).load(user.photoUrl).into(userDP)
+        }
 
         if (uId != FirebaseAuth.getInstance().currentUser?.uid){
             followButton.visibility = View.VISIBLE
@@ -155,6 +159,7 @@ class AccountFragment(private val uId: String) : Fragment() {
                 .child(FirebaseAuth.getInstance().currentUser!!.uid)
                 .child("following")
                 .addValueEventListener(object : ValueEventListener{
+                    @SuppressLint("SetTextI18n")
                     override fun onDataChange(snapshot: DataSnapshot) {
                         if (uId.let { snapshot.child(it).exists() }){
                             followButton.text = "Following"
