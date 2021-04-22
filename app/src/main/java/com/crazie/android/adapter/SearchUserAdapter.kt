@@ -1,6 +1,8 @@
 package com.crazie.android.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +37,7 @@ class SearchUserAdapter(context: Context?, users: ArrayList<SearchUser>)
         private lateinit var firebaseUser: FirebaseUser
         private lateinit var dataBase: DatabaseReference
 
+        @SuppressLint("ResourceType")
         fun bindItems(searchUser: SearchUser){
 
             userImageView = itemView.findViewById(R.id.search_result_user_image)
@@ -90,6 +93,7 @@ class SearchUserAdapter(context: Context?, users: ArrayList<SearchUser>)
                             .child("following")
                             .child(searchUser.uId.toString())
                             .setValue(true)
+
                 }else{
                     FirebaseDatabase.getInstance().reference
                     .child("follow")
@@ -106,8 +110,9 @@ class SearchUserAdapter(context: Context?, users: ArrayList<SearchUser>)
 
                     userFollowUnFollow.backgroundTintList = ContextCompat.getColorStateList(
                             itemView.context,
-                            android.R.color.white
+                            R.color.teal_200
                     )
+
                 }
             }
         }
@@ -122,6 +127,10 @@ class SearchUserAdapter(context: Context?, users: ArrayList<SearchUser>)
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (userId?.let { snapshot.child(it).exists() } == true){
                         buttonFollow.text = itemView.context.getString(R.string.following)
+                        buttonFollow.backgroundTintList = ContextCompat.getColorStateList(
+                            itemView.context,
+                            android.R.color.white
+                        )
                     }else{
                         buttonFollow.text = itemView.context.getString(R.string.follow)
                     }

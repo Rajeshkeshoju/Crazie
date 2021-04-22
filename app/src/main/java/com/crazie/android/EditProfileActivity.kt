@@ -107,7 +107,7 @@ class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
 
     private fun updateProfilePicture(){
         val storageRef = FirebaseStorage.getInstance().getReference("userProfilePictures/")
-        val fileRef = storageRef.child(user.userName +"."+"jpg")
+        val fileRef = storageRef.child(user.uId +"."+"jpg")
 
         fileRef.putFile(imageUri)
                 .addOnSuccessListener {

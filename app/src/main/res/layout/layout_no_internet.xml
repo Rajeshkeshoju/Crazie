@@ -28,16 +28,16 @@
             android:textStyle="bold"
             android:textSize="@dimen/text_large"/>
 
-        <com.google.android.material.button.MaterialButton
+        <android.widget.Button
             android:id="@+id/btn_try_again_connection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/try_again"
-            android:textColor="@android:color/black"
+            android:textColor="@drawable/button_text_color"
             android:textAllCaps="false"
             android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:backgroundTint="?attr/colorSecondary"/>
+            android:background="@drawable/bg_button"/>
 
     </LinearLayout>
 

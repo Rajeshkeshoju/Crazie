@@ -41,6 +41,7 @@
             android:textColorHint="?attr/colorSecondary">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/_test_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/email"
@@ -62,6 +63,7 @@
             app:passwordToggleTint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/_test_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
@@ -72,10 +74,21 @@
                 android:textCursorDrawable="@drawable/edittext_cursor"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_password"
+            android:textAlignment="textEnd"
+            android:layout_margin="10dp"
+            android:selectAllOnFocus="false"
+            android:linksClickable="true"
+            android:autoLink="all"/>
+
 
     </LinearLayout>
 
-    <com.crazie.android.transitionbutton.TransitionButton
+    <com.royrodriguez.transitionbutton.TransitionButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,7 +96,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/login"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
+        android:textStyle="bold"
         android:textSize="@dimen/text_large"
         android:textColor="@android:color/black"
         android:backgroundTint="@drawable/bg_button"

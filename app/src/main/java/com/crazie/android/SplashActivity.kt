@@ -2,7 +2,12 @@ package com.crazie.android
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.crazie.android.utils.UtilCheckConnectivity
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 
 class SplashActivity : AppCompatActivity() {
 
@@ -11,24 +16,23 @@ class SplashActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
-
-        setContentView(R.layout.activity_splash)
-
+        /*setContentView(R.layout.activity_splash)
         startActivity(Intent(this,LoginActivity::class.java))
-        finish()
+        finish()*/
+
         //init()
-        /*if (!UtilCheckConnectivity().isOnline()){
+        if (!UtilCheckConnectivity().isOnline()){
             setContentView(R.layout.activity_splash)
             startActivity(Intent(this,NoInternetActivity::class.java))
             finish()
         }else {
             setContentView(R.layout.activity_splash)
             init()
-        }*/
+        }
 
     }
 
-    /*private fun init() {
+    private fun init() {
             FirebaseRemoteConfig.getInstance().apply {
                 val configSettings = FirebaseRemoteConfigSettings.Builder()
                         .setMinimumFetchIntervalInSeconds(0)
@@ -56,7 +60,7 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }
 
-    }*/
+    }
 
 
 

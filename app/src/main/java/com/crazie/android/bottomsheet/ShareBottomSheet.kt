@@ -15,7 +15,7 @@ class ShareBottomSheet : BottomSheetDialogFragment() , View.OnClickListener {
             container: ViewGroup?,
             savedInstanceState: Bundle?): View? {
 
-        val view = inflater.inflate(R.layout.bottonsheet_post_share,container,false)
+        val view = inflater.inflate(R.layout.bottomsheet_post_share,container,false)
 
         val share = view.findViewById<TextView>(R.id.add_post_to_story)
 

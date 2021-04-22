@@ -10,7 +10,7 @@ import android.widget.Toast
 import com.crazie.android.MainActivity
 import com.crazie.android.R
 import com.crazie.android.model.User
-import com.crazie.android.transitionbutton.TransitionButton
+import com.crazie.android.utils.UtilCheckConnectivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.royrodriguez.transitionbutton.TransitionButton
 import java.util.*
 
 class RegisterBottomSheet : BottomSheetDialogFragment() , View.OnClickListener{
@@ -39,19 +40,23 @@ class RegisterBottomSheet : BottomSheetDialogFragment() , View.OnClickListener{
     private lateinit var auth:FirebaseAuth
     private lateinit var dataBase:DatabaseReference
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        dialog?.setOnShowListener{
+            val bottomSheetDialog = it as BottomSheetDialog
+            val sheetInternal: View =
+                bottomSheetDialog.findViewById(com.google.android.material.R.id.design_bottom_sheet)!!
+            BottomSheetBehavior.from(sheetInternal).state=  BottomSheetBehavior.STATE_EXPANDED
+            BottomSheetBehavior.from(sheetInternal).peekHeight = sheetInternal.height
+        }
+
+        super.onViewCreated(view, savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        dialog?.setOnShowListener{
-            val bottomSheetDialog = it as BottomSheetDialog
-            val sheetInternal: View =
-                bottomSheetDialog.findViewById(com.google.android.material.R.id.design_bottom_sheet)!!
-            BottomSheetBehavior.from(sheetInternal).state=  BottomSheetBehavior.STATE_EXPANDED
-        }
 
          val v = inflater.inflate(R.layout.layout_register,container,false)
 
@@ -88,29 +93,37 @@ class RegisterBottomSheet : BottomSheetDialogFragment() , View.OnClickListener{
         when(v?.id){
             R.id.btn_create_account -> {
 
-                btnRegister.startAnimation()
-                mName = fullName.editText?.text.toString()
-                mUserName = fullName.editText?.text
-                        .toString()
-                        .filter { !it.isWhitespace() }
-                        .toLowerCase(Locale.ROOT)
-                mEmail = email.editText?.text.toString().trim()
-                mPassword = password.editText?.text.toString().trim()
-                mConfirmPassword = confirmPassword.editText?.text.toString().trim()
-                if(mPassword == mConfirmPassword){
-                    if (mEmail.isNotEmpty()){
-                        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()){
-                            email.editText!!.error = "Invalid Email"
+                if(UtilCheckConnectivity().isOnline()){
 
-                            btnRegister.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
+                    btnRegister.startAnimation()
+                    mName = fullName.editText?.text.toString()
+                    mUserName = fullName.editText?.text
+                            .toString()
+                            .filter { !it.isWhitespace() }
+                            .toLowerCase(Locale.ROOT)
+                    mEmail = email.editText?.text.toString().trim()
+                    mPassword = password.editText?.text.toString().trim()
+                    mConfirmPassword = confirmPassword.editText?.text.toString().trim()
+                    if(mPassword == mConfirmPassword){
+                        if (mEmail.isNotEmpty()){
+                            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(mEmail).matches()){
+                                email.editText!!.error = "Invalid Email"
+
+                                btnRegister.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
+                            }else{
+                                createAccount(mEmail,mPassword)
+                            }
                         }else{
-                            createAccount(mEmail,mPassword)
+                            btnRegister.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
                         }
-                    }else{
-                        btnRegister.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
+
                     }
 
+                }else{
+                    Toast.makeText(context,R.string.no_internet,Toast.LENGTH_SHORT).show()
                 }
+
+
             }
 
             R.id.register_close ->

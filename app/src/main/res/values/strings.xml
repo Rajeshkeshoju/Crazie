@@ -34,4 +34,5 @@
     <string name="share">Share</string>
 
     <string name="user_activity_text">You liked <b>%s</b>\'s post</string>
+    <string name="forgot_password">Forgot password?</string>
 </resources>

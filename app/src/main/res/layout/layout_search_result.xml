@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/touch_area_height"
         app:backgroundTint="?attr/colorSecondary"
-        android:textColor="@android:color/black"
+        android:textColor="@color/black"
         android:textSize="12sp"
         android:text="@string/follow"
         android:textAllCaps="false"/>
