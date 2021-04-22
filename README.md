@@ -38,3 +38,7 @@ Crazie is inspired from famous social media app  <b><a href="http://instagram.co
 
 <p><h3>Image Cropper</h3><a href="https://github.com/ArthurHub/Android-Image-Cropper">Image cropper</a></p>
 
+
+# References
+<p><h3>Reference :: KOD Dev</h3><a href="https://youtube.com/playlist?list=PLzLFqCABnRQduspfbu2empaaY9BoIGLDM">Instagram clone playlist</a></p>
+
