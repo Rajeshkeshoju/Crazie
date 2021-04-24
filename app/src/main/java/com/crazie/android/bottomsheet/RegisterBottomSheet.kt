@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
-import com.crazie.android.MainActivity
+import com.crazie.android.activity.MainActivity
 import com.crazie.android.R
 import com.crazie.android.model.User
 import com.crazie.android.utils.UtilCheckConnectivity

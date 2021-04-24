@@ -2,7 +2,7 @@ package com.crazie.android.fragment
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import com.crazie.android.MainActivity
+import com.crazie.android.activity.MainActivity
 import com.crazie.android.R
 import com.crazie.android.model.User
 import com.google.firebase.auth.FirebaseAuth

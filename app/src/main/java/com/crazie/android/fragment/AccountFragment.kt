@@ -17,9 +17,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.crazie.android.EditProfileActivity
-import com.crazie.android.LoginActivity
+import com.crazie.android.activity.EditProfileActivity
+import com.crazie.android.activity.LoginActivity
 import com.crazie.android.R
+import com.crazie.android.activity.AboutActivity
 import com.crazie.android.adapter.AccountPostAdapter
 import com.crazie.android.model.Post
 import com.crazie.android.model.User
@@ -328,13 +329,17 @@ class AccountFragment(private val uId: String) : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_edit_profile -> {
-                startActivity(Intent(activity,EditProfileActivity::class.java))
+                startActivity(Intent(activity, EditProfileActivity::class.java))
+            }
+
+            R.id.menu_about_app -> {
+                startActivity(Intent(activity, AboutActivity::class.java))
             }
 
             R.id.menu_logout -> {
                 try {
                     auth.signOut()
-                    startActivity(Intent(activity,LoginActivity::class.java))
+                    startActivity(Intent(activity, LoginActivity::class.java))
                     activity?.finish()
                 }catch (e:Exception){
                     Log.e("Firebase Signout",e.toString())

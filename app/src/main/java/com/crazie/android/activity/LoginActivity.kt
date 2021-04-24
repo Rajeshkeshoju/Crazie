@@ -1,4 +1,4 @@
-package com.crazie.android
+package com.crazie.android.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.crazie.android.R
 import com.crazie.android.bottomsheet.RegisterBottomSheet
 import com.crazie.android.utils.UtilCheckConnectivity
 import com.google.android.material.textfield.TextInputLayout
@@ -65,7 +66,7 @@ class LoginActivity : AppCompatActivity() , View.OnClickListener{
                 R.id.tv_create_account ->
                     RegisterBottomSheet().show(supportFragmentManager,"Create Account")
                 R.id.tv_forgot_password ->
-                    startActivity(Intent(this,ResetPasswordActivity::class.java))
+                    startActivity(Intent(this, ResetPasswordActivity::class.java))
 
                 R.id.btn_login -> {
                     if (UtilCheckConnectivity().isOnline()) {
@@ -86,7 +87,7 @@ class LoginActivity : AppCompatActivity() , View.OnClickListener{
                             btnLogin.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
                         }
                     } else {
-                        Toast.makeText(this,R.string.no_internet,Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, R.string.no_internet,Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -104,6 +105,7 @@ class LoginActivity : AppCompatActivity() , View.OnClickListener{
                         finish()
                     }
                 }else{
+                    forgotPassword.visibility = View.VISIBLE
                     btnLogin.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
 
                 }
@@ -114,7 +116,7 @@ class LoginActivity : AppCompatActivity() , View.OnClickListener{
 
         val user = auth.currentUser
         if (user != null){
-            startActivity(Intent(this,MainActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
         super.onStart()

@@ -1,21 +1,18 @@
-package com.crazie.android
+package com.crazie.android.activity
 
-import android.graphics.Color
-import android.graphics.ColorFilter
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.crazie.android.R
 import com.crazie.android.bottomsheet.PostBottomsheet
 import com.crazie.android.fragment.AccountFragment
 import com.crazie.android.fragment.ActivityFragment
 import com.crazie.android.fragment.ExploreFragment
 import com.crazie.android.fragment.HomeFragment
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -24,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() , View.OnClickListener{
 
     private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var bottomAppBar: BottomAppBar
     private lateinit var fabPost: FloatingActionButton
 
     private var tapCount = 0
@@ -78,8 +74,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
     }
 
     override fun onBackPressed() {
-
-
         if (R.id.action_home != bottomNavigationView.selectedItemId){
             setHomeItem(this)
         }else {

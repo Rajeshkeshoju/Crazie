@@ -15,9 +15,7 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".ResetPasswordActivity"/>
-        <activity android:name=".EditProfileActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activity.SplashActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,10 +25,15 @@
 
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".NoInternetActivity" />
+
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.NoInternetActivity" />
+        <activity android:name=".activity.ResetPasswordActivity"/>
+        <activity android:name=".activity.EditProfileActivity" />
+        <activity android:name=".activity.AboutActivity"/>
+
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat" />

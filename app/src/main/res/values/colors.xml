@@ -9,6 +9,4 @@
     <color name="white">#CDFFFFFF</color>
 
     <color name="colorAccent">#e74c3c</color>
-    <color name="colorError">#e74c3c</color>
-    <color name="colorLoader">#fff</color>
 </resources>

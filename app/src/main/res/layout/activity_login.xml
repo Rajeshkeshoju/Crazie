@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".activity.LoginActivity"
     android:id="@+id/layout_login_activity"
     android:background="?attr/colorPrimaryVariant"
     android:focusable="false"
@@ -79,11 +79,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/forgot_password"
+            android:textSize="@dimen/text_small"
             android:textAlignment="textEnd"
             android:layout_margin="10dp"
             android:selectAllOnFocus="false"
             android:linksClickable="true"
-            android:autoLink="all"/>
+            android:autoLink="all"
+            android:visibility="gone"/>
 
 
     </LinearLayout>

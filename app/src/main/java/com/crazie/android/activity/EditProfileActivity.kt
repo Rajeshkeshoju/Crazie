@@ -1,4 +1,4 @@
-package com.crazie.android
+package com.crazie.android.activity
 
 import android.content.Intent
 import android.net.Uri
@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.crazie.android.R
 import com.crazie.android.model.User
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth

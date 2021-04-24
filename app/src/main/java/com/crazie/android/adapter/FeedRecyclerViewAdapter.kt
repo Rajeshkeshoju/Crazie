@@ -203,7 +203,10 @@ class FeedRecyclerViewAdapter(private val postList: ArrayList<Post>)
                     if (user != null) {
                         postUserName.text = user.userName
                         postPublisher.text = user.userName
-                        Glide.with(itemView).load(user.photoUrl).into(publisherDP)
+
+                        if (user.photoUrl != "null"){
+                            Glide.with(itemView).load(user.photoUrl).into(publisherDP)
+                        }
 
                         if (user.isAccountVerified){
                             postUserName.setCompoundDrawablesWithIntrinsicBounds(

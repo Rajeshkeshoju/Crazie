@@ -1,10 +1,11 @@
-package com.crazie.android
+package com.crazie.android.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.crazie.android.R
 import com.crazie.android.utils.UtilCheckConnectivity
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
@@ -12,18 +13,11 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.setBackgroundDrawableResource(R.mipmap.ic_launcher_round)
-
         super.onCreate(savedInstanceState)
 
-        /*setContentView(R.layout.activity_splash)
-        startActivity(Intent(this,LoginActivity::class.java))
-        finish()*/
-
-        //init()
         if (!UtilCheckConnectivity().isOnline()){
             setContentView(R.layout.activity_splash)
-            startActivity(Intent(this,NoInternetActivity::class.java))
+            startActivity(Intent(this, NoInternetActivity::class.java))
             finish()
         }else {
             setContentView(R.layout.activity_splash)
@@ -51,12 +45,12 @@ class SplashActivity : AppCompatActivity() {
     private fun splashEnableDisable(result: Boolean) {
         if (result){
             Handler(Looper.myLooper()!!).postDelayed({
-                startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }, 2000)
 
         }else{
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
 

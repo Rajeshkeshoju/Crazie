@@ -4,10 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
+    tools:context=".activity.SplashActivity"
     android:gravity="center"
     android:orientation="vertical"
     android:background="?attr/colorPrimaryVariant">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_foreground"
+        android:layout_gravity="center"
+        android:scaleX="2"
+        android:scaleY="2"/>
 
 
 </FrameLayout>
