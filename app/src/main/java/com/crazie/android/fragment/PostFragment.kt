@@ -13,6 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.crazie.android.R
+import com.crazie.android.utils.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -125,7 +126,7 @@ class PostFragment : Fragment() {
                         }
 
                     } else {
-                        Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()
+                        view!!.context.toast("Something went wrong")
                     }
                     //dialog.dismiss()
                     loadHome()

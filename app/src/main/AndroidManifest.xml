@@ -22,17 +22,37 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="crazie.com" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="open.crazie.app" />
+            </intent-filter>
 
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden" />
 
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.NoInternetActivity" />
-        <activity android:name=".activity.ResetPasswordActivity"/>
+        <activity android:name=".activity.ResetPasswordActivity" />
         <activity android:name=".activity.EditProfileActivity" />
-        <activity android:name=".activity.AboutActivity"/>
+        <activity android:name=".activity.AboutActivity" />
 
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"

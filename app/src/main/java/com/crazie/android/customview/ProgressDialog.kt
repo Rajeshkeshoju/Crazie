@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.ProgressBar
 import com.crazie.android.R
 
+/*
 class ProgressDialog{
     companion object{
 
@@ -50,4 +51,4 @@ class ProgressDialog{
         }
 
     }
-}
+}*/

@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide
 import com.crazie.android.R
 import com.crazie.android.fragment.AccountFragment
 import com.crazie.android.model.SearchUser
+import com.crazie.android.utils.toast
 import com.google.android.material.button.MaterialButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -137,9 +138,6 @@ class SearchUserAdapter(context: Context?, users: ArrayList<SearchUser>)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-
-                    Toast.makeText(itemView.context
-                            ,"Something went wrong", Toast.LENGTH_SHORT).show()
                 }
 
             })

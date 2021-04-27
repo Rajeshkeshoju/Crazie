@@ -10,12 +10,10 @@
     android:background="?attr/colorPrimaryVariant">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_foreground"
-        android:layout_gravity="center"
-        android:scaleX="2"
-        android:scaleY="2"/>
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_gravity="center"/>
 
 
 </FrameLayout>

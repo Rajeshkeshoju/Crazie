@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.crazie.android.R
 import com.crazie.android.bottomsheet.RegisterBottomSheet
 import com.crazie.android.utils.UtilCheckConnectivity
+import com.crazie.android.utils.toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.royrodriguez.transitionbutton.TransitionButton
@@ -87,7 +88,7 @@ class LoginActivity : AppCompatActivity() , View.OnClickListener{
                             btnLogin.stopAnimation(TransitionButton.StopAnimationStyle.SHAKE,null)
                         }
                     } else {
-                        Toast.makeText(this, R.string.no_internet,Toast.LENGTH_SHORT).show()
+                        toast(getString(R.string.no_internet))
                     }
                 }
             }

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.crazie.android.R
 import com.crazie.android.adapter.FollowingFollowersAdapter
+import com.crazie.android.utils.toast
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -74,8 +75,7 @@ class FollowingFollowersFragment(private var tab: Int, private val uId: String) 
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        Toast.makeText(context
-                                ,"Something went wrong", Toast.LENGTH_SHORT).show()
+                        view!!.context.toast("Something went wrong")
                     }
 
                 })

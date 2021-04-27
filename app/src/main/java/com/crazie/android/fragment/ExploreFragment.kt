@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.crazie.android.R
 import com.crazie.android.adapter.SearchUserAdapter
 import com.crazie.android.model.SearchUser
+import com.crazie.android.utils.toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -82,8 +83,7 @@ class ExploreFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(context
-                        ,"Something went wrong",Toast.LENGTH_SHORT).show()
+                view!!.context.toast("Something went wrong")
             }
 
         })
@@ -108,8 +108,7 @@ class ExploreFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(context
-                        ,"Something went wrong",Toast.LENGTH_SHORT).show()
+                view!!.context.toast("Something went wrong")
             }
 
         })

@@ -21,6 +21,7 @@ import com.crazie.android.fragment.AccountFragment
 import com.crazie.android.fragment.LikedUsersFragment
 import com.crazie.android.model.Post
 import com.crazie.android.model.User
+import com.crazie.android.utils.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -217,8 +218,7 @@ class FeedRecyclerViewAdapter(private val postList: ArrayList<Post>)
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(itemView.context
-                            , "Something went wrong $error", Toast.LENGTH_SHORT).show()
+                    itemView.context.toast("Something went wrong")
                 }
 
             }

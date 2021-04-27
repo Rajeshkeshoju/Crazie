@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.crazie.android.R
 import com.crazie.android.model.User
+import com.crazie.android.utils.toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -60,8 +61,7 @@ class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@EditProfileActivity
-                        ,"Something went wrong",Toast.LENGTH_SHORT).show()
+                toast("Something went wrong")
             }
 
         }
@@ -117,7 +117,7 @@ class EditProfileActivity : AppCompatActivity() , View.OnClickListener {
                     }
                 }
                 .addOnFailureListener{
-                    Toast.makeText(this,"Something Went Wrong",Toast.LENGTH_SHORT).show()
+                    toast("Something went wrong")
                 }
 
 

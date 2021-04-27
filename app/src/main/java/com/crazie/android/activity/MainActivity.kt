@@ -13,6 +13,7 @@ import com.crazie.android.fragment.AccountFragment
 import com.crazie.android.fragment.ActivityFragment
 import com.crazie.android.fragment.ExploreFragment
 import com.crazie.android.fragment.HomeFragment
+import com.crazie.android.utils.toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
             }
             true
         }
+        bottomNavigationView.setOnNavigationItemReselectedListener {}
     }
 
     private fun bindViews() {
@@ -68,7 +70,14 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
 
         supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_out,
+                        R.anim.fade_out,
+                        R.anim.slide_in,
+                        R.anim.fade_in
+                )
                 .replace(R.id.fragment_container,fragment)
+                .addToBackStack(null)
                 .commit()
         return true
     }
@@ -79,7 +88,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
         }else {
             if (tapCount < 1) {
                 tapCount++
-                Toast.makeText(this, "Tap again to exit", Toast.LENGTH_SHORT).show()
+                toast("Tap again to exit")
                 Handler(Looper.getMainLooper()).postDelayed({
                     tapCount = 0
                 }, 1000)

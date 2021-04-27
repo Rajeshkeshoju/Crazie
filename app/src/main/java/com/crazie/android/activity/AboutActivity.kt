@@ -7,13 +7,15 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
 import com.crazie.android.R
+import com.crazie.android.utils.setupRemoteConfig
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 
 class AboutActivity : AppCompatActivity() {
 
     private lateinit var textContribute: TextView
 
-    private val contributionURL = "https://github.com/Rajeshkeshoju/Crazie"
-    private val contributionText = "Contribute code to <u><font color='aqua'>GitHub/Crazie</font></u>"
+    private var contributionURL = "https://github.com/Rajeshkeshoju/Crazie"
+    private val contributionText = "Contribute code : <u><font color='aqua'>GitHub/Crazie</font></u>"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

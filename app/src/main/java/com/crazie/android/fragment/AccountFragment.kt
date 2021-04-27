@@ -24,6 +24,7 @@ import com.crazie.android.activity.AboutActivity
 import com.crazie.android.adapter.AccountPostAdapter
 import com.crazie.android.model.Post
 import com.crazie.android.model.User
+import com.crazie.android.utils.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import de.hdodenhof.circleimageview.CircleImageView
@@ -97,7 +98,7 @@ class AccountFragment(private val uId: String) : Fragment() {
                     if (user != null) {
                         setDataToViews(user)
                     }else{
-                        Toast.makeText(context,"Something went wrong",Toast.LENGTH_SHORT).show()
+
                     }
                 }
 
@@ -145,7 +146,7 @@ class AccountFragment(private val uId: String) : Fragment() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        Toast.makeText(context,"Something went wrong",Toast.LENGTH_SHORT).show()
+                        view!!.context.toast("Something went wrong")
                     }
 
                 })
@@ -230,6 +231,12 @@ class AccountFragment(private val uId: String) : Fragment() {
         arrowBack.setOnClickListener{
             activity!!.supportFragmentManager
                     .beginTransaction()
+                    .setCustomAnimations(
+                            R.anim.slide_out,
+                            R.anim.fade_out,
+                            R.anim.slide_in,
+                            R.anim.fade_in
+                    )
                     .replace(R.id.fragment_container,HomeFragment())
                     .addToBackStack(null)
                     .commit()
@@ -296,6 +303,12 @@ class AccountFragment(private val uId: String) : Fragment() {
 
         activity!!.supportFragmentManager
             .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_out,
+                        R.anim.fade_out,
+                        R.anim.slide_in,
+                        R.anim.fade_in
+                )
             .replace(R.id.fragment_container,FollowingFollowersFragment(tab,uid))
             .addToBackStack(null)
             .commit()
@@ -342,7 +355,7 @@ class AccountFragment(private val uId: String) : Fragment() {
                     startActivity(Intent(activity, LoginActivity::class.java))
                     activity?.finish()
                 }catch (e:Exception){
-                    Log.e("Firebase Signout",e.toString())
+                    view!!.context.toast("Something went wrong")
                 }
             }
 

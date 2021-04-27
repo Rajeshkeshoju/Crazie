@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.crazie.android.R
 import com.crazie.android.adapter.SearchUserAdapter
 import com.crazie.android.model.SearchUser
+import com.crazie.android.utils.toast
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -70,8 +71,7 @@ class FollowingListFragment(private val uId: String) : Fragment() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Toast.makeText(context
-                        ,"Something went wrong", Toast.LENGTH_SHORT).show()
+                    view!!.context.toast("Something went wrong")
                 }
 
             })

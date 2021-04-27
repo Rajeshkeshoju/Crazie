@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.crazie.android.R
+import com.crazie.android.utils.toast
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 
@@ -48,10 +49,10 @@ class ResetPasswordActivity : AppCompatActivity() {
                     FirebaseAuth.getInstance().sendPasswordResetEmail(email)
                             .addOnCompleteListener {
                                 if (it.isSuccessful){
-                                    Toast.makeText(this,"Reset link sent to your email",Toast.LENGTH_LONG).show()
+                                    toast("Reset link sent to your email")
                                     finish()
                                 }else{
-                                    Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show()
+                                    toast("Something went wrong")
                                 }
                             }
                 }

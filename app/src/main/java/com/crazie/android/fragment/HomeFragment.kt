@@ -15,6 +15,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.crazie.android.R
 import com.crazie.android.adapter.FeedRecyclerViewAdapter
 import com.crazie.android.model.Post
+import com.crazie.android.utils.toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -101,8 +102,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(context
-                        ,"Something went wrong",Toast.LENGTH_SHORT).show()
+                view!!.context.toast("Something went wrong")
             }
         })
 
@@ -131,8 +131,7 @@ class HomeFragment : Fragment() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(context
-                        ,"Something went wrong",Toast.LENGTH_SHORT).show()
+                view!!.context.toast("Something went wrong")
             }
 
         })

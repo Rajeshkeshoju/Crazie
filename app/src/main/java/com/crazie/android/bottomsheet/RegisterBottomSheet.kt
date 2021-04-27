@@ -11,6 +11,7 @@ import com.crazie.android.activity.MainActivity
 import com.crazie.android.R
 import com.crazie.android.model.User
 import com.crazie.android.utils.UtilCheckConnectivity
+import com.crazie.android.utils.toast
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -120,7 +121,7 @@ class RegisterBottomSheet : BottomSheetDialogFragment() , View.OnClickListener{
                     }
 
                 }else{
-                    Toast.makeText(context,R.string.no_internet,Toast.LENGTH_SHORT).show()
+                    v.context.toast(getString(R.string.no_internet))
                 }
 
 
