@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://firebaseappdistribution.googleapis.com/app-binary-downloads/firebase-app-distro/app-icons/1013255043250/1:1013255043250:android:ed344a4dc650b2ad6db1ab/22491d91-7c45-4319-b334-56708e304ee1.png" width="70" height="70"/>
+<img src="https://firebaseappdistribution.googleapis.com/app-binary-downloads/firebase-app-distro/app-icons/1013255043250/1:1013255043250:android:ed344a4dc650b2ad6db1ab/5f2df0be-b2af-4a23-a066-4c2f433d3401.png" width="70" height="70"/>
   
 <h1 align="center">Crazie - Social media app</h1>  
 </p>
